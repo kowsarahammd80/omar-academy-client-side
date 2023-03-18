@@ -1,4 +1,4 @@
-.details-image{
+.course-image{
       
    width: 100%;
    height: 30vh;
@@ -20,4 +20,11 @@
 
   font-size: 2rem;
   
+}
+
+.books-image{
+    
+  width: 100%;
+  height: 50vh;
+
 }

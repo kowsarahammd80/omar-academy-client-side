@@ -15,6 +15,16 @@ const DetailsCardOfCourse = () => {
 
       <div>
 
+        {/* headline */}
+
+        <div className="block lg:hidden mt-5 lg:mt-10 mb-5 lg:mb-10">
+        <h1 className="text-2xl lg:text-4xl font-bold">Omar’s Basic Math</h1>
+
+        <p className="opacity-80 font-semibold mt-2">
+          Course Details / Description
+        </p>
+      </div>
+
         {/* course card */}
 
         <div className="mt-5 lg:mt-10 mb-5 lg:mb-10">
@@ -37,7 +47,7 @@ const DetailsCardOfCourse = () => {
 
                   <h2 className="font-semibold text-xl">Omar’s Basic Math</h2>
 
-                  <p className="font-semibold text-blue-600 ml-5 text-xl">300taka</p>
+                  <p className="font-semibold text-blue-600 ml-5 text-xl ">300 Taka</p>
 
                   <button className="btn-ghost p-2 text-2xl"> <i class="fa-sharp fa-regular fa-heart"></i> </button>
 
@@ -92,7 +102,7 @@ const DetailsCardOfCourse = () => {
 
         {/* Omar's books */}
 
-        <div>
+        <div className="hidden lg:block">
 
         <div className="card card-compact lg:w-96 bg-base-100 shadow-xl rounded-none mb-5">
             
@@ -101,7 +111,7 @@ const DetailsCardOfCourse = () => {
               <img
                 src={books}
                 alt="imageName"
-                className="details-image"
+                className="books-image"
               />
 
             </figure>
@@ -112,9 +122,13 @@ const DetailsCardOfCourse = () => {
 
                   <h2 className="font-semibold text-xl">Omar’s Basic Math</h2>
 
-                  <p className="font-semibold text-blue-600 ml-5 text-xl">500taka</p>
+                  <p className="font-semibold text-blue-600 ml-5 text-xl">500 Taka</p>
 
 
+              </div>
+
+              <div className="mt-5 mb-5">
+                 <p className="font-semibold">This book is specially written and edited for learning written and short mathematics. The book contains chapter-wise discussions, explanations of formulas and summaries, written solutions as well as short solutions with explanations for easy learning of mathematics at home quickly and effectively.</p>
               </div>
 
               
@@ -137,7 +151,7 @@ const DetailsCardOfCourse = () => {
            
         </div>
 
-        {/* Omar's books */}
+        {/* Omar's books end */}
 
       </div>
 
