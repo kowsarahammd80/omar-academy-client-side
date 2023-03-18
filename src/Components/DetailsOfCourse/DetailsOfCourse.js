@@ -10,15 +10,15 @@ const DetailsOfCourse = () => {
 
       {/* grid  */}
          
-         <div className='grid grid-cols-1 lg:grid-cols-2'>
+         <div className='flex flex-col-reverse  lg:flex-row'>
               
-               <div>
+               <div className='w-full'>
                    
                    <DetailsTextOfCourse/>
 
                </div> 
 
-               <div>
+               <div className='w-full'>
 
                   <DetailsCardOfCourse/>
 
