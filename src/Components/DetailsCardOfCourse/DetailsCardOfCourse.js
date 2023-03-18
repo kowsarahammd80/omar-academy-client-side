@@ -118,7 +118,7 @@ const DetailsCardOfCourse = () => {
               </div>
 
               
-             {/* buy now button */}
+             {/* Know more button */}
 
               <div className="card-actions justify-center">
 

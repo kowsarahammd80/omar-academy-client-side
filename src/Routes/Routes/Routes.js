@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import AcademyDetails from "../../Components/AcademyDetails/AcademyDetails";
+import DetailsOfCourse from "../../Components/DetailsOfCourse/DetailsOfCourse"
 import Login from "../../Components/Login/Login";
 import Profile from "../../Components/Profile/Profile";
 import ProfileSetting from "../../Components/ProfileSetting/ProfileSetting";
@@ -34,21 +34,30 @@ const routers = createBrowserRouter([
       },
 
       {
+
         path: "/signUp",
         element: <SignUp></SignUp>,
+
       },
 
       {
+
         path: "/academyDetails",
+
         element: (
           <PrivateRoute>
-            {" "}
-            <AcademyDetails />{" "}
+
+             <DetailsOfCourse/>
+
           </PrivateRoute>
         ),
+
       },
+
     ],
+
   },
+
 ]);
 
 export default routers;
