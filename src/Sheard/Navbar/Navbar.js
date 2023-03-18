@@ -43,6 +43,10 @@ const Navbar = () => {
         <Link>Skill Development</Link>
       </li>
 
+      <li className="font-bold">
+        <Link>Question Bank</Link>
+      </li>
+
     </>
 
   );
