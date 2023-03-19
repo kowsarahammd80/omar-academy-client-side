@@ -86,7 +86,7 @@ const BooksDetails = () => {
 
         {/* summery  */}
 
-        <div className="w-72">
+        <div className="w-full lg:w-72 font-semibold mt-5 ">
 
           <div className="summer-bg-set">
 
