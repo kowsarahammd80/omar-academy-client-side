@@ -18,11 +18,11 @@ const DetailsCardOfCourse = () => {
         {/* headline */}
 
         <div className="block lg:hidden mt-5 lg:mt-10 mb-5 lg:mb-10">
-        <h1 className="text-2xl lg:text-4xl font-bold">Omar’s Basic Math</h1>
+          <h1 className="text-2xl lg:text-4xl font-bold">Omar’s Basic Math</h1>
 
-        <p className="opacity-80 font-semibold mt-2">
+         <p className="opacity-80 font-semibold mt-2">
           Course Details / Description
-        </p>
+         </p>
       </div>
 
         {/* course card */}
@@ -147,7 +147,7 @@ const DetailsCardOfCourse = () => {
 
             </div>
 
-          </div>
+        </div>
            
         </div>
 

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-
 import NavfavouriteIcon from "../NavfavouriteIcon/NavfavouriteIcon";
 import NavAddToCard from "../NavAddToCard/NavAddToCard";
 import NavNotification from "../NavNotification/NavNotification";
@@ -9,13 +8,10 @@ import NavProfileAvatar from "../NavProfileAvatar/NavProfileAvatar";
 import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
 
 const Navbar = () => {
-
   const { user } = useContext(AuthContext);
 
   const navInfo = (
-
     <>
-
       <li className="font-bold ml-0 lg:ml-5">
         <Link to="/">Home</Link>
       </li>
@@ -33,8 +29,9 @@ const Navbar = () => {
       </li>
 
       <li className="font-bold">
-        <Link>Online Batch</Link>
+        <Link to="/onlineBatch">Online Batch</Link>
       </li>
+
       <li className="font-bold">
         <Link>Book Store</Link>
       </li>
@@ -46,11 +43,8 @@ const Navbar = () => {
       <li className="font-bold">
         <Link>Question Bank</Link>
       </li>
-
     </>
-
   );
-
 
   return (
     <div className="mx-0 lg:mx-8 py-5">
@@ -79,11 +73,8 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navInfo}
-
             </ul>
-
           </div>
-
 
           <Link
             to="/"
@@ -94,11 +85,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-center hidden lg:flex">
-
-          <ul className="menu menu-horizontal gap-0 m-0">
-            {navInfo} 
-          </ul>
-
+          <ul className="menu menu-horizontal gap-0 m-0">{navInfo}</ul>
         </div>
 
         {/* avatar and dropdown  */}
@@ -106,41 +93,35 @@ const Navbar = () => {
         <div className="navbar-end">
           {/* Favourite icon */}
 
-          {
-            user?.emailVerified === true ? 
+          {user?.emailVerified === true ? (
             <>
-               <NavfavouriteIcon />
+              <NavfavouriteIcon />
 
-{/* add to card */}
+              {/* add to card */}
 
-<NavAddToCard />
+              <NavAddToCard />
 
-{/* notification */}
+              {/* notification */}
 
-<NavNotification />
+              <NavNotification />
 
-{/* avatar */}
+              {/* avatar */}
 
-<NavProfileAvatar />
+              <NavProfileAvatar />
             </>
-           :
-            
-           <>
+          ) : (
+            <>
+              <p className="mr-5">
+                <Link to="/login" className="font-bold text-blue-600">
+                  Login
+                </Link>
+              </p>
 
-          <p className="mr-5">
-            <Link to="/login" className="font-bold text-blue-600">Login</Link>
-          </p>
-
-          <p className="font-bold text-blue-600">
-
-            <Link to="/signUp">Sign Up</Link>
-
-          </p>
-             
-           </>
-
-          }
-
+              <p className="font-bold text-blue-600">
+                <Link to="/signUp">Sign Up</Link>
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>
