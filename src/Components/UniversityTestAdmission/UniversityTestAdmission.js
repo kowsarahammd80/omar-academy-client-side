@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
+import { toast } from "react-hot-toast";
 import { CoursContext } from "../../Context/CoursProbider";
-import { addToDb } from "../../LocalStorage/fakeDb";
 import UniversityTestAdmissionMap from "../UniversityTestAdmissionMap/UniversityTestAdmissionMap";
 
 const UniversityTestAdmission = () => {
@@ -13,26 +13,13 @@ const UniversityTestAdmission = () => {
       .catch((e) => console.error(e));
   }, []);
    
-  const [cart, setCart]= useContext(CoursContext);
-  const handeleAddtoCart = product => {
-    let newCart = []
-    const exists = cart.find(
-      existingProduct => existingProduct.id === product.id
-    )
-    if (!exists) {
-      product.quantity = 1
-      newCart = [...cart, product]
-    } else {
-      const rest = cart.filter(
-        existingProduct => existingProduct.id !== product.id
-      )
-      exists.quantity = exists.quantity + 1
-      newCart = [...rest, exists]
-    }
+  
 
-    setCart(newCart)
-   addToDb(product.id)
- 
+
+  const { addToCart }=useContext(CoursContext)
+  const handeleAddtoCart = cours => {
+    addToCart (cours)
+   toast.success("add to cart succesfully ",{autoClose:3000}) 
   }
 
   return (

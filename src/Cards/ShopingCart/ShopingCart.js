@@ -1,14 +1,27 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { CoursContext } from "../../Context/CoursProbider";
+import {Link} from  'react-router-dom'
+ 
 const ShopingCart = () => {
+
+  
+
+ const {cart,cartTotal,  removeFromCart ,clearCart}=useContext(CoursContext)
+ 
+
   return (
-    <body class="bg-gray-100">
+
+
+    <>
+
+    {
+      cart?.length >0 ?  <body class="bg-gray-100">
       <div class="container mx-auto mt-10">
         <div class="flex shadow-md my-10">
           <div class="w-3/4 bg-white px-10 py-10">
             <div class="flex justify-between border-b pb-8">
               <h1 class="font-semibold text-2xl">Shopping Cart</h1>
-              <h2 class="font-semibold text-2xl">3 Items</h2>
+              <h2 class="font-semibold text-2xl">{cart.length} Items</h2>
             </div>
             <div class="flex mt-10 mb-5">
               <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">
@@ -24,155 +37,75 @@ const ShopingCart = () => {
                 Total
               </h3>
             </div>
-            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-              <div class="flex w-2/5">
-                <div class="w-20">
-                  <img
-                    class="h-24"
-                    src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z"
-                    alt=""
-                  />
-                </div>
-                <div class="flex flex-col justify-between ml-4 flex-grow">
-                  <span class="font-bold text-sm">Iphone 6S</span>
-                  <span class="text-red-500 text-xs">Apple</span>
-                  <a
-                    href="#"
-                    class="font-semibold hover:text-red-500 text-gray-500 text-xs"
-                  >
-                    Remove
-                  </a>
-                </div>
-              </div>
-              <div class="flex justify-center w-1/5">
-                <svg
-                  class="fill-current text-gray-600 w-3"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                </svg>
+          
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    <span class="sr-only">Image</span>
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Product
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Qty
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Price
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
 
-                <input
-                  class="mx-2 border text-center w-8"
-                  type="text"
-                  value="1"
-                />
 
-                <svg
-                  class="fill-current text-gray-600 w-3"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                </svg>
-              </div>
-              <span class="text-center w-1/5 font-semibold text-sm">
-                $400.00
-              </span>
-              <span class="text-center w-1/5 font-semibold text-sm">
-                $400.00
-              </span>
-            </div>
+{
+  cart?.map(cours=>   <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+  <td class="w-32 p-4">
+      <img src={cours.courseImg} alt=""/>
+  </td>
+  <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+    { cours?.courseName}
+  </td>
+  <td class="px-6 py-4">
+     <h1>1</h1>
+  </td>
 
-            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-              <div class="flex w-2/5">
-                <div class="w-20">
-                  <img
-                    class="h-24"
-                    src="https://drive.google.com/uc?id=10ht6a9IR3K2i1j0rHofp9-Oubl1Chraw"
-                    alt=""
-                  />
-                </div>
-                <div class="flex flex-col justify-between ml-4 flex-grow">
-                  <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
-                  <span class="text-red-500 text-xs">Xiaomi</span>
-                  <a
-                    href="#"
-                    class="font-semibold hover:text-red-500 text-gray-500 text-xs"
-                  >
-                    Remove
-                  </a>
-                </div>
-              </div>
-              <div class="flex justify-center w-1/5">
-                <svg
-                  class="fill-current text-gray-600 w-3"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                </svg>
+ 
+  <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+  {cours.coursePrice === 0 || cours.coursePrice === "free" || cours.coursePrice ==="" ? "free" : <h1>{cours.coursePrice}     Taka </h1>   } 
 
-                <input
-                  class="mx-2 border text-center w-8"
-                  type="text"
-                  value="1"
-                />
+  </td>
+  <td class="px-6 py-4">
+      <a 
+    onClick={()=>removeFromCart(cours.id)}
+       
+      href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+  </td>
+</tr>)
+}
 
-                <svg
-                  class="fill-current text-gray-600 w-3"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                </svg>
-              </div>
-              <span class="text-center w-1/5 font-semibold text-sm">
-                $40.00
-              </span>
-              <span class="text-center w-1/5 font-semibold text-sm">
-                $40.00
-              </span>
-            </div>
 
-            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-              <div class="flex w-2/5">
-                <div class="w-20">
-                  <img
-                    class="h-24"
-                    src="https://drive.google.com/uc?id=1vXhvO9HoljNolvAXLwtw_qX3WNZ0m75v"
-                    alt=""
-                  />
-                </div>
-                <div class="flex flex-col justify-between ml-4 flex-grow">
-                  <span class="font-bold text-sm">Airpods</span>
-                  <span class="text-red-500 text-xs">Apple</span>
-                  <a
-                    href="#"
-                    class="font-semibold hover:text-red-500 text-gray-500 text-xs"
-                  >
-                    Remove
-                  </a>
-                </div>
-              </div>
-              <div class="flex justify-center w-1/5">
-                <svg
-                  class="fill-current text-gray-600 w-3"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                </svg>
-                <input
-                  class="mx-2 border text-center w-8"
-                  type="text"
-                  value="1"
-                />
 
-                <svg
-                  class="fill-current text-gray-600 w-3"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                </svg>
-              </div>
-              <span class="text-center w-1/5 font-semibold text-sm">
-                $150.00
-              </span>
-              <span class="text-center w-1/5 font-semibold text-sm">
-                $150.00
-              </span>
-            </div>
+         
+           
+           
+        </tbody>
+    </table>
+</div>
 
-            <a
+
+          
+<div class="flex justify-between items-center my-4 text-2xl  font-semibold ">
+
+<Link to="/">
+<button>
+<a
               href="#"
-              class="flex font-semibold text-indigo-600 text-sm mt-10"
+              class="flex font-semibold uppercase text-indigo-600 text-sm mt-10"
             >
               <svg
                 class="fill-current mr-2 text-indigo-600 w-4"
@@ -182,6 +115,26 @@ const ShopingCart = () => {
               </svg>
               Continue Shopping
             </a>
+</button>
+</Link>
+
+
+
+<button
+ 
+ 
+ onClick={()=>clearCart()}
+className="bg-red-400 text-sm rounded-md text-white uppercase p-2"> 
+clear Cart
+</button>
+
+
+
+
+</div>
+ 
+
+
           </div>
 
           <div id="summary" class="w-1/4 px-8 py-10">
@@ -227,7 +180,40 @@ const ShopingCart = () => {
           </div>
         </div>
       </div>
-    </body>
+    </body>:
+<div class="w-full 
+
+
+
+p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+   
+<div  clssName="block	 m-auto  ">
+<img className="m-auto" src="https://i.ibb.co/rvXwTn3/empty-cart.png" />
+</div>
+
+      
+<Link to="/">
+<button>
+<a
+              href="#"
+              class="flex font-semibold uppercase text-indigo-600 text-sm mt-10"
+            >
+              <svg
+                class="fill-current mr-2 text-indigo-600 w-4"
+                viewBox="0 0 448 512"
+              >
+                <path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
+              </svg>
+              Continue Shopping
+            </a>
+</button>
+</Link>
+    </div>
+
+
+    }
+    </>
+   
   );
 };
 

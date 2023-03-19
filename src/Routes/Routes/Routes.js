@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import ShopingCart from "../../Cards/ShopingCart/ShopingCart";
 import DetailsOfCourse from "../../Components/DetailsOfCourse/DetailsOfCourse"
 import Login from "../../Components/Login/Login";
 import Profile from "../../Components/Profile/Profile";
@@ -53,6 +54,14 @@ const routers = createBrowserRouter([
         ),
 
       },
+      {
+        path:"/shop",
+         element:<ShopingCart></ShopingCart>
+      }
+
+
+
+
 
     ],
 
