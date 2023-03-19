@@ -4,6 +4,7 @@ import dot from "../../assats/ic_round-arrow-right.png";
 import books from '../../assats/book-store.png'
 
 const DetailsTextOfCourse = () => {
+  
   return (
     <div>
       {/* headline */}

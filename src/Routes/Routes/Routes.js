@@ -1,6 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
+import BooksDetails from "../../Components/BooksDetails/BooksDetails";
+import BookStore from "../../Components/BookStore/BookStore";
 import DetailsOfCourse from "../../Components/DetailsOfCourse/DetailsOfCourse"
 import Login from "../../Components/Login/Login";
+import OnlineBatch from "../../Components/OnlineBatch/OnlineBatch";
+import OnlineBatchDetails from "../../Components/OnlineBatchDetails/OnlineBatchDetails";
 import Profile from "../../Components/Profile/Profile";
 import ProfileSetting from "../../Components/ProfileSetting/ProfileSetting";
 import SignUp from "../../Components/SignUp/SignUp";
@@ -53,6 +57,21 @@ const routers = createBrowserRouter([
         ),
 
       },
+
+      {
+        path: "/onlineBatch",
+        element: <OnlineBatchDetails/>
+      },
+
+      {
+        path: '/booksStore',
+        element: <BookStore/>
+      },
+
+      {
+        path: "/booksDetails",
+        element: <BooksDetails/>
+      }
 
     ],
 
