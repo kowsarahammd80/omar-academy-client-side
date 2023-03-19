@@ -11,7 +11,7 @@ const OnlineBatchTextDetails = () => {
         {/* headline */}
 
         <div className="mb-3">
-          <h1 className="text-2xl font-bold">Course's Teacher</h1>
+          <h1 className="text-2xl font-bold"> Course's Teacher </h1>
         </div>
 
         <div className="card lg:card-side bg-base-100 border-2 rounded-none">
@@ -90,7 +90,9 @@ const OnlineBatchTextDetails = () => {
 
          <div className='mt-5 mb-5'>
               
-              <button className='enroll-button font-semibold'>Enroll this course</button>
+              <button className='enroll-button font-semibold'>
+                Enroll this course
+              </button>
 
          </div>
 
