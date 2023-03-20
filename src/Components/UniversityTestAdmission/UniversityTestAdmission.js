@@ -4,6 +4,7 @@ import UniversityTestAdmissionMap from "../UniversityTestAdmissionMap/University
 
 const UniversityTestAdmission = () => {
   const [universityTestes, setUniversityTestes] = useState([]);
+  const { addToCart } = useContext(CoursContext);
 
   useEffect(() => {
     fetch("UniversityTestAdmission.json")
@@ -12,7 +13,9 @@ const UniversityTestAdmission = () => {
       .catch((e) => console.error(e));
   }, []);
 
-  const { addToCart, checkCart ,isadded} = useContext(CoursContext);
+
+  const { addToCart, checkCart} = useContext(CoursContext);
+
   const handeleAddtoCart = (cours) => {
     addToCart(cours);
 

@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { WhislistContext } from '../../Context/WishLishtProbaider';
 import DetailsCardOfCourse from '../DetailsCardOfCourse/DetailsCardOfCourse';
 import DetailsTextOfCourse from '../DetailsTextOfCourse/DetailsTextOfCourse';
 
 const DetailsOfCourse = () => {
+
+
+  const {addToWishlist }=useContext(WhislistContext)
+ 
+
+const handleaddToWishlish=(product)=>{
+  addToWishlist(product)
+}
+
 
   return (
 
@@ -14,13 +24,19 @@ const DetailsOfCourse = () => {
               
                <div className='w-full'>
                    
-                   <DetailsTextOfCourse/>
+                   <DetailsTextOfCourse 
+                   
+                   
+                   />
 
                </div> 
 
                <div className='w-full'>
 
-                  <DetailsCardOfCourse/>
+                  <DetailsCardOfCourse
+                  handleaddToWishlish={handleaddToWishlish}
+                  
+                  />
 
                </div>
 
