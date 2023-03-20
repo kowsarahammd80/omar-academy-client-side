@@ -10,6 +10,7 @@ import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
 const Navbar = () => {
   const { user } = useContext(AuthContext);
 
+
   const navInfo = (
     <>
       <li className="font-bold ml-0 lg:ml-5">
@@ -45,6 +46,11 @@ const Navbar = () => {
       </li>
     </>
   );
+
+
+
+
+
 
   return (
     <div className="mx-0 lg:mx-8 py-5">

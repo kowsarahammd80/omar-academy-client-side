@@ -13,8 +13,12 @@ const UniversityTestAdmission = () => {
       .catch((e) => console.error(e));
   }, []);
 
+
+  const { addToCart, checkCart} = useContext(CoursContext);
+
   const handeleAddtoCart = (cours) => {
     addToCart(cours);
+
   };
 
   return (

@@ -5,13 +5,17 @@ import { CoursContext } from "../../Context/CoursProbider";
 const UniversityTestAdmissionMap = ({
   handeleAddtoCart,
   universityTestData,
+  
 }) => {
   const { id, courseImg, coursePrice, videoCount, chapter, courseName } =
     universityTestData;
 
-  const { cart } = useContext(CoursContext);
 
-  const checkCart = cart?.map((item) => item.id === id);
+
+
+
+
+ 
 
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
