@@ -4,7 +4,7 @@ import dot from '../../../assats/ic_round-arrow-right.png'
 
 const OnlineBatchTextDetails = () => {
   return (
-    <div>
+    <div className='mx-3 lg:mx-0'>
 
       {/* teacher */}
        <div className=" mb-5 mt-16 lg:mt-20">
@@ -33,10 +33,13 @@ const OnlineBatchTextDetails = () => {
        {/* What you’ll learn */}
 
       <div className="mt-16 mb-10">
+
         {/* headline */}
 
         <div className="mt-5 mb-2">
+
           <h1 className="text-2xl font-bold">What you’ll learn</h1>
+
         </div>
 
         {/* card */}
@@ -100,6 +103,7 @@ const OnlineBatchTextDetails = () => {
 
     </div>
   );
+  
 };
 
 export default OnlineBatchTextDetails;
