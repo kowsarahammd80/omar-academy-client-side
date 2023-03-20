@@ -5,7 +5,7 @@ const OnlineBooksAadd = () => {
 
   return (
 
-    <div className='mb-5 mt-16 lg:mt-20'>
+    <div className='mb-5 mt-16 lg:mt-20 mx-3 lg:mx-0'>
        
        <div className="card card-compact lg:w-96 bg-base-100 shadow-xl rounded-none mb-5">
             
