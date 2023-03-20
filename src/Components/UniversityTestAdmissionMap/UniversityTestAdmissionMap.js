@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CoursContext } from "../../Context/CoursProbider";
 
 const UniversityTestAdmissionMap = ({
   handeleAddtoCart,
@@ -7,6 +8,10 @@ const UniversityTestAdmissionMap = ({
 }) => {
   const { id, courseImg, coursePrice, videoCount, chapter, courseName } =
     universityTestData;
+
+  const { cart } = useContext(CoursContext);
+
+  const checkCart = cart?.map((item) => item.id === id);
 
   return (
     <div className="card card-compact bg-base-100 shadow-xl">

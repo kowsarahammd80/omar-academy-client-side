@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./Accademic.css";
 import AcademicMap from "../AcademicMap/AcademicMap";
-import whislistContext from "../../Context/WishLisht";
+import whislistContext, { WhislistContext } from "../../Context/WishLishtProbaider";
 
 const Academic = () => {
   const [academices, setAcademices] = useState([]);
@@ -14,6 +14,8 @@ const Academic = () => {
   }, []);
 
   
+
+
   
 
   
