@@ -14,7 +14,7 @@ const UniversityTestAdmission = () => {
   }, []);
 
 
-  const { addToCart, checkCart} = useContext(CoursContext);
+  
 
   const handeleAddtoCart = (cours) => {
     addToCart(cours);
