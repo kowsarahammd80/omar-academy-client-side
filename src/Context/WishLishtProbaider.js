@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 export const WhislistContext = createContext([]);
-const WishLisht = ({ children }) => {
+const WishLishtProbaider = ({ children }) => {
   const [Wishlist, setWishlist] = useState(() => {
     const localData = localStorage.getItem("wishlist");
     return localData ? JSON.parse(localData) : [];
@@ -56,4 +56,4 @@ const WishLisht = ({ children }) => {
   );
 };
 
-export default WishLisht;
+export default WishLishtProbaider
