@@ -6,10 +6,11 @@ import NavAddToCard from "../NavAddToCard/NavAddToCard";
 import NavNotification from "../NavNotification/NavNotification";
 import NavProfileAvatar from "../NavProfileAvatar/NavProfileAvatar";
 import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
+import { CoursContext } from "../../Context/CoursProbider";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
-
+const {cart}=useContext(CoursContext)
 
   const navInfo = (
     <>
