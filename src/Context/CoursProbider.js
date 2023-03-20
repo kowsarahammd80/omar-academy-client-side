@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext,  useState } from 'react';
  
 
 export  const CoursContext=createContext([])
@@ -27,6 +27,10 @@ const CoursProbider = ({children}) => {
       localStorage.setItem('cart', JSON.stringify(newCart));
     }
   };
+
+
+
+  
 
   const removeFromCart = (productId) => {
     const newCart = cart.filter((p) => p.id !== productId);

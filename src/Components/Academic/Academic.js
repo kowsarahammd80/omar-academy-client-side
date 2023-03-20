@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Accademic.css";
-import image from "../../assats/academy-class.png";
 import AcademicMap from "../AcademicMap/AcademicMap";
+import whislistContext from "../../Context/WishLisht";
 
 const Academic = () => {
   const [academices, setAcademices] = useState([]);
@@ -12,6 +12,11 @@ const Academic = () => {
       .then((data) => setAcademices(data))
       .catch((e) => console.error(e));
   }, []);
+
+  
+  
+
+  
 
   return (
     <div>
