@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import BooksDetails from "../../Components/BooksDetails/BooksDetails";
 import BookStore from "../../Components/BookStore/BookStore";
+import ShopingCart from "../../Cards/ShopingCart/ShopingCart";
 import DetailsOfCourse from "../../Components/DetailsOfCourse/DetailsOfCourse"
 import Login from "../../Components/Login/Login";
 import OnlineBatch from "../../Components/OnlineBatch/OnlineBatch";
@@ -56,6 +57,29 @@ const routers = createBrowserRouter([
           </PrivateRoute>
         ),
 
+      },
+      {
+        path:"/shop",
+         element:<ShopingCart></ShopingCart>
+      }
+
+
+,
+
+
+      {
+        path: "/onlineBatch",
+        element: <OnlineBatchDetails/>
+      },
+
+      {
+        path: '/booksStore',
+        element: <BookStore/>
+      },
+
+      {
+        path: "/booksDetails",
+        element: <BooksDetails/>
       },
 
       {
