@@ -1,10 +1,16 @@
 import React from "react";
 import "./BooksDetails.css";
 import bookImage from "../../assats/book-store.png";
+import BookDetailsOfIndex from "../BookDetailsOfIndex/BookDetailsOfIndex";
 
 const BooksDetails = () => {
+
   return (
-    <div className="mx-3 lg:mx-24 mt-5 lg:mt-10">
+
+    <div >
+
+      <div className="mx-3 lg:mx-24 mt-5 lg:mt-10">
+           
       <div className="grid grid-cols-1 lg:grid-cols-3">
         {/* image card */}
 
@@ -17,8 +23,11 @@ const BooksDetails = () => {
         {/* buy Option  */}
 
         <div className="flex justify-center">
+
           <div>
+
             <div className="text-center mt-10">
+
               <h1 className="text-2xl lg:text-3xl font-bold ">
                 Omar’s Basic Math
               </h1>
@@ -28,11 +37,13 @@ const BooksDetails = () => {
               </p>
 
               <p className="font-semibold opacity-60">Category: Mathematics</p>
+
             </div>
 
             {/* review */}
 
             <div className="text-xl mt-5">
+
               <i class="fa-solid text-yellow-400 fa-star mr-3"></i>
               <i class="fa-solid text-yellow-400 fa-star mr-3"></i>
               <i class="fa-solid text-yellow-400 fa-star mr-3"></i>
@@ -42,6 +53,7 @@ const BooksDetails = () => {
               <span className="font-semibold text-lg text-blue-600">
                 6 review
               </span>
+
             </div>
 
             <hr className="hr-set mt-5" />
@@ -68,6 +80,7 @@ const BooksDetails = () => {
                 {" "}
                 <i class="fa-regular fa-heart"></i>{" "}
               </button>
+
             </div>
 
             <hr className="hr-set mt-5" />
@@ -75,11 +88,15 @@ const BooksDetails = () => {
             {/* button */}
 
             <div className="mt-5 flex justify-around">
+
               <button className="buy-now-book-button">Buy Now</button>
 
               <button className="add-book-button">Add to Card</button>
+
             </div>
+
           </div>
+          
         </div>
 
         {/* buy option end */}
@@ -94,15 +111,24 @@ const BooksDetails = () => {
 
             <p className="text-bg-set-summery mt-3 p-3 text-center ">Cash On Delivery</p>
 
-            <p className="text-bg-set-summery mt-3 p-3 text-center ">Delivery Charge 60 Taka (Inside Dhaka)</p>
+            <p className="text-bg-set-summery mt-3 p-3 text-center ">
+              Delivery Charge 60 Taka (Inside Dhaka)
+            </p>
 
-            <p className="text-bg-set-summery mt-3 mb-10 p-3 text-center ">Delivery Charge 120 Taka (Outside Dhaka)</p>
+            <p className="text-bg-set-summery mt-3 mb-10 p-3 text-center ">
+              Delivery Charge 120 Taka (Outside Dhaka)
+            </p>
 
           </div>
 
         </div>
 
       </div>
+
+      </div>
+       
+       <BookDetailsOfIndex/>
+
     </div>
   );
 };
