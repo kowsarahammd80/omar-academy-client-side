@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const PreparationForJobsMap = ({preparationForJobData}) => {
-
-  const {id, courseImg, courseName, coursePrice, videoCount, chapter} = preparationForJobData;
+const PreparationForJobsMap = ({ preparationForJobData, handeleAddtoCart }) => {
+  const { id, courseImg, courseName, coursePrice, videoCount, chapter } =
+    preparationForJobData;
 
   return (
-
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure>
         <img src={courseImg} alt="" className="w-full" />
@@ -13,11 +13,7 @@ const PreparationForJobsMap = ({preparationForJobData}) => {
 
       <div className="card-body">
         <div className="flex justify-evenly items-center">
-          <p className="text-2xl font-semibold text-red-500">
-
-            {courseName}
-            
-          </p>
+          <p className="text-2xl font-semibold text-red-500">{courseName}</p>
 
           <p className="font-semibold text-emerald-600"> {coursePrice} </p>
         </div>
@@ -36,17 +32,19 @@ const PreparationForJobsMap = ({preparationForJobData}) => {
         <hr className="hr-tag" />
 
         <div className="card-actions justify-evenly py-2 text-lg">
-
           <button className="see-details font-bold">See Details</button>
 
-          <button className="see-details font-bold">Add To Card</button>
-
+          <Link to="/shop">
+            <button
+              onClick={() => handeleAddtoCart(preparationForJobData)}
+              className="see-details font-bold"
+            >
+              Add To Card
+            </button>
+          </Link>
         </div>
-
       </div>
-
     </div>
-
   );
 };
 

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import { toast } from "react-hot-toast";
 import { CoursContext } from "../../Context/CoursProbider";
 import UniversityTestAdmissionMap from "../UniversityTestAdmissionMap/UniversityTestAdmissionMap";
 
@@ -12,15 +11,11 @@ const UniversityTestAdmission = () => {
       .then((data) => setUniversityTestes(data))
       .catch((e) => console.error(e));
   }, []);
-   
-  
 
-
-  const { addToCart }=useContext(CoursContext)
-  const handeleAddtoCart = cours => {
-    addToCart (cours)
-   toast.success("add to cart succesfully ",{autoClose:3000}) 
-  }
+  const { addToCart } = useContext(CoursContext);
+  const handeleAddtoCart = (cours) => {
+    addToCart(cours);
+  };
 
   return (
     <div>
