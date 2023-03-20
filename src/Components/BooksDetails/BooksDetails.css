@@ -1,0 +1,36 @@
+.booksImage-set{
+    
+  width: 100%;
+  height: 65vh;
+
+}
+
+.buy-now-book-button{
+  background-color: #4AF0AE;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.add-book-button{
+
+  background-color: #FFB683;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+
+}
+
+.summer-bg-set{
+    
+  background-color: #F6FCDA;
+
+}
+
+.summery-text-bg{
+  background-color: #B3B995;
+}
+
+.text-bg-set-summery{
+  background-color: #EDF3CD;
+}

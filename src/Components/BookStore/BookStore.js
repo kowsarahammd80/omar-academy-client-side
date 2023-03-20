@@ -1,7 +1,24 @@
-import React from "react";
-import book from "../../assats/book-store.png";
+import React, { useEffect, useState } from "react";
+import BooksStoreMap from "../booksStoreMap/BooksStoreMap";
 
-const BookStore = () => {
+const BookStore = ({len}) => {
+
+  const [books, setBooks] = useState([])
+
+
+  useEffect(() => {
+
+    fetch('books.json')
+    .then(res => res.json())
+    .then(data => setBooks(data))
+    .catch(e => console.error(e))
+
+  },[])
+
+  let length = 0;
+  !len ? length = books.length : length = len;
+
+  
   return (
     <div className="mb-10">
       {/* headline */}
@@ -14,13 +31,24 @@ const BookStore = () => {
       {/* book image */}
 
       <div className="flex justify-center ">
-        <div>
-          <img src={book} alt="" className="" />
 
-          <p className="text-center text-2xl font-semibold mt-3">Omar's Basic Math</p>
-          <p className="text-center text-xl font-semibold mt-1">Taka 500</p>
-        </div>
+          <div className="flex-none lg:flex justify-between">
+
+           {
+                books.slice(0, length).map(book => <BooksStoreMap
+                key={book._id} booksData = {book}
+
+                />)
+           }
+
+          </div>
+
       </div>
+       
+       {/* button */}
+
+       
+
     </div>
   );
 };

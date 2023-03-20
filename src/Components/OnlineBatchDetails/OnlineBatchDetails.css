@@ -1,0 +1,51 @@
+.button-online{
+  padding: 10px 20px;
+  border: solid gray 1px;
+  border-radius: 25px;
+}
+
+.button-online:hover {
+  border-radius: 10px;
+  border: solid blue 2px;
+}
+
+.subject-button-1{
+  background-color: #85092E;
+  color: white;
+  font-weight: 600;
+  padding: 40px 55px;
+  border-radius: 20px;
+}
+
+.subject-button-2{
+  background-color: #E91054;
+  color: white;
+  font-weight: 600;
+  padding: 40px 55px;
+  border-radius: 20px;
+}
+
+.color-button-bg{
+  background-color: #EFFEF9;
+
+}
+
+.button-online-color{
+  background-color: #B6F2D9;
+  padding: 10px 20px;
+  border: solid gray 1px;
+  border-radius: 25px;
+}
+
+.subject-card-bg{
+  background-color: #EFFEF9;
+}
+
+.sub-crd-bottom-bg{
+  background-color: #30926B;
+}
+
+.hr-set{
+  border: solid gray 1px;
+  width: 100%;
+}
