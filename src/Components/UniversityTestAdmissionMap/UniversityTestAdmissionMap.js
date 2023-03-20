@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 const UniversityTestAdmissionMap = ({
   handeleAddtoCart,
   universityTestData,
+  
 }) => {
   const { id, courseImg, coursePrice, videoCount, chapter, courseName } =
     universityTestData;
+
+
+
+
 
   return (
     <div className="card card-compact bg-base-100 shadow-xl">

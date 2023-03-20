@@ -1,12 +1,9 @@
-import React, { createContext,  useState } from 'react';
- 
+import React, { createContext, useState } from "react";
 
-export  const CoursContext=createContext([])
-const CoursProbider = ({children}) => {
-
-
+export const CoursContext = createContext([]);
+const CoursProbider = ({ children }) => {
   const [cart, setCart] = useState(() => {
-    const localData = localStorage.getItem('cart');
+    const localData = localStorage.getItem("cart");
     return localData ? JSON.parse(localData) : [];
   });
 
@@ -20,41 +17,43 @@ const CoursProbider = ({children}) => {
         return p;
       });
       setCart(newCart);
-      localStorage.setItem('cart', JSON.stringify(newCart));
+      localStorage.setItem("cart", JSON.stringify(newCart));
     } else {
       const newCart = [...cart, product];
       setCart(newCart);
-      localStorage.setItem('cart', JSON.stringify(newCart));
+      localStorage.setItem("cart", JSON.stringify(newCart));
     }
   };
-
-
-
-  
 
   const removeFromCart = (productId) => {
     const newCart = cart.filter((p) => p.id !== productId);
     setCart(newCart);
-    localStorage.setItem('cart', JSON.stringify(newCart));
+    localStorage.setItem("cart", JSON.stringify(newCart));
   };
 
-
-
-  
-
-
+ 
 
   const clearCart = () => {
     setCart([]);
-    localStorage.removeItem('cart');
+    localStorage.removeItem("cart");
   };
 
-  
-  const cartTotal = cart.reduce((total, product) => total + product.price * product.qty, 0);
+  const cartTotal = cart.reduce(
+    (total, product) => total + product.price * product.qty,
+    0
+  );
 
   return (
     <CoursContext.Provider
-      value={{cartTotal,clearCart,removeFromCart,cart, addToCart  }}
+      value={{
+        cartTotal,
+        clearCart,
+        
+        removeFromCart,
+        cart,
+        addToCart,
+   
+      }}
     >
       {children}
     </CoursContext.Provider>

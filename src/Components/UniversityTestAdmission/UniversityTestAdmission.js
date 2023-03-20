@@ -12,9 +12,10 @@ const UniversityTestAdmission = () => {
       .catch((e) => console.error(e));
   }, []);
 
-  const { addToCart } = useContext(CoursContext);
+  const { addToCart, checkCart ,isadded} = useContext(CoursContext);
   const handeleAddtoCart = (cours) => {
     addToCart(cours);
+
   };
 
   return (
@@ -35,6 +36,7 @@ const UniversityTestAdmission = () => {
             key={universityTest.id}
             universityTestData={universityTest}
             handeleAddtoCart={handeleAddtoCart}
+            
           ></UniversityTestAdmissionMap>
         ))}
       </div>
