@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./DetailsCardOfCourse.css";
 import image from "../../assats/Rectangle 4 (1).png";
 import arow from "../../assats/Vector (6).png";
 import books from "../../assats/book-store.png";
+import { Link } from "react-router-dom";
+import BuyProbider, { BuynowContext } from "../../Context/BuyProbider";
 
-const DetailsCardOfCourse = ({ handleaddToWishlish ,data}) => {
+const DetailsCardOfCourse = ({ handleaddToWishlish ,data,}) => {
+  
+   const {addToCart}=useContext(BuynowContext)
   const {_id,courseName,coursThumnil,ThecherName,ThecherEducation,techerImg
     ,videoQuantity,videolecture,
       chapterQuantity,coursPrice
     ,keyPoint}=data
+
+
+
+
+
 
   return (
     <div className="flex-none capitalize lg:flex justify-center">
@@ -41,23 +50,31 @@ const DetailsCardOfCourse = ({ handleaddToWishlish ,data}) => {
                  {coursPrice} Taka
                 </p>
 
-                <button
+ <button
                   onClick={() =>
                     handleaddToWishlish({ product: "add korte hobe" })
                   }
                   className="btn-ghost p-2 text-2xl"
                 >
-                  {" "}
+                 
                   <i class="fa-sharp fa-regular fa-heart"></i>{" "}
                 </button>
+ 
+                
               </div>
 
               {/* buy now button */}
 
-              <div className="card-actions justify-center">
-                <button className="buy-now-button mt-5 mb-5">Buy Now</button>
-              </div>
+              <Link to="/shoping"> <div className="card-actions justify-center">
 
+
+               
+                <button 
+                
+                   onClick={()=>addToCart(data)}
+                className="buy-now-button mt-5 mb-5">Buy Now</button>
+              </div>
+              </Link>
               <hr className="hr-tag text-gray-200" />
 
               {/* details */}
