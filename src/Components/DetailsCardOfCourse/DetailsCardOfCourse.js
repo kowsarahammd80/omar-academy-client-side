@@ -4,16 +4,21 @@ import image from "../../assats/Rectangle 4 (1).png";
 import arow from "../../assats/Vector (6).png";
 import books from "../../assats/book-store.png";
 
-const DetailsCardOfCourse = ({ handleaddToWishlish }) => {
+const DetailsCardOfCourse = ({ handleaddToWishlish ,data}) => {
+  const {_id,courseName,coursThumnil,ThecherName,ThecherEducation,techerImg
+    ,videoQuantity,videolecture,
+      chapterQuantity,coursPrice
+    ,keyPoint}=data
+
   return (
-    <div className="flex-none lg:flex justify-center">
+    <div className="flex-none capitalize lg:flex justify-center">
       {/* components parents div */}
 
       <div>
         {/* headline */}
 
         <div className="block lg:hidden mt-5 lg:mt-10 mb-5 lg:mb-10">
-          <h1 className="text-2xl lg:text-4xl font-bold">Omar’s Basic Math</h1>
+          <h1 className="text-2xl lg:text-4xl font-bold">{courseName}</h1>
 
           <p className="opacity-80 font-semibold mt-2">
             Course Details / Description
@@ -25,15 +30,15 @@ const DetailsCardOfCourse = ({ handleaddToWishlish }) => {
         <div className="mt-5 lg:mt-10 mb-5 lg:mb-10">
           <div className="card card-compact lg:w-96 bg-base-100 shadow-xl rounded-none">
             <figure>
-              <img src={image} alt="imageName" className="details-image" />
+              <img src={coursThumnil} alt="thumnil" className="details-image" />
             </figure>
 
             <div className="card-body">
               <div className="flex justify-between items-center">
-                <h2 className="font-semibold text-xl">Omar’s Basic Math</h2>
+                <h2 className="font-semibold text-xl">{courseName}</h2>
 
                 <p className="font-semibold text-blue-600 ml-5 text-xl ">
-                  300 Taka
+                 {coursPrice} Taka
                 </p>
 
                 <button
@@ -62,12 +67,9 @@ const DetailsCardOfCourse = ({ handleaddToWishlish }) => {
                   <ul>
                     <li className="flex items-center mb-2">
                       <img src={arow} alt="" className="mr-2" />{" "}
-                      <span>Free Videos</span>{" "}
+                      <span>{videoQuantity}+ Videos</span>{" "}
                     </li>
-                    <li className="flex items-center mb-2">
-                      <img src={arow} alt="" className="mr-2" />{" "}
-                      <span>Free Videos</span>{" "}
-                    </li>
+                    
                   </ul>
                 </div>
 
@@ -75,12 +77,9 @@ const DetailsCardOfCourse = ({ handleaddToWishlish }) => {
                   <ul>
                     <li className="flex items-center mb-2">
                       <img src={arow} alt="" className="mr-2" />{" "}
-                      <span>Free Videos</span>{" "}
+                      <span>{chapterQuantity}+ lesson</span>{" "}
                     </li>
-                    <li className="flex items-center mb-2">
-                      <img src={arow} alt="" className="mr-2" />{" "}
-                      <span>Free Videos</span>{" "}
-                    </li>
+                   
                   </ul>
                 </div>
               </div>

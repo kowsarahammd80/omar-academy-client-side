@@ -1,13 +1,9 @@
 import React from "react";
 
-const NavAddToCard = () => {
-
+const NavAddToCard = ({ cart, cartTotal }) => {
   return (
-    
     <div className="dropdown dropdown-end">
-
       <label tabIndex={0} className="btn btn-ghost btn-circle">
-
         <div className="indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +31,7 @@ const NavAddToCard = () => {
         <div className="card-body">
           <span className="font-bold text-lg">8 Items</span>
 
-          <span className="text-info">Subtotal: $999</span>
+          <span className="text-info">Subtotal: {cartTotal} Taka</span>
 
           <div className="card-actions">
             <button className="btn btn-primary btn-block">View cart</button>
@@ -43,7 +39,6 @@ const NavAddToCard = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
