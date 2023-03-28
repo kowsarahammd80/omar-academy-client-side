@@ -47,8 +47,8 @@ const routers = createBrowserRouter([
 
       {
 
-        path: "/academyDetails",
-
+        path: "/academyDetails/:id",
+       loader:async({params})=>fetch(`http://localhost:5000/academic/${params.id}`),
         element: (
           <PrivateRoute>
 

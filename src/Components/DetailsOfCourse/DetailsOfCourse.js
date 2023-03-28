@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { WhislistContext } from '../../Context/WishLishtProbaider';
 import DetailsCardOfCourse from '../DetailsCardOfCourse/DetailsCardOfCourse';
 import DetailsTextOfCourse from '../DetailsTextOfCourse/DetailsTextOfCourse';
 
 const DetailsOfCourse = () => {
-
-
   const {addToWishlist }=useContext(WhislistContext)
- 
-
 const handleaddToWishlish=(product)=>{
   addToWishlist(product)
 }
+
+const data=useLoaderData()
+console.log(data)
+
 
 
   return (
@@ -25,7 +26,8 @@ const handleaddToWishlish=(product)=>{
                <div className='w-full'>
                    
                    <DetailsTextOfCourse 
-                   
+                   data={data}
+                  
                    
                    />
 
@@ -34,6 +36,7 @@ const handleaddToWishlish=(product)=>{
                <div className='w-full'>
 
                   <DetailsCardOfCourse
+                  data={data}
                   handleaddToWishlish={handleaddToWishlish}
                   
                   />

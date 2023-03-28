@@ -3,14 +3,18 @@ import "./DetailsTextOfCourse.css";
 import dot from "../../assats/ic_round-arrow-right.png";
 import books from '../../assats/book-store.png'
 
-const DetailsTextOfCourse = () => {
+const DetailsTextOfCourse = ({data}) => {
   
+  const {_id,courseName,coursThumnil,ThecherName,ThecherEducation,techerImg
+    ,videoQuantity,videolecture,
+      chapterQuantity,coursPrice,aboutCours
+    ,keyPoint}=data
   return (
-    <div>
+    <div  className="capitalize">
       {/* headline */}
 
       <div className="hidden lg:block mt-5 lg:mt-10 mb-5 lg:mb-10">
-        <h1 className="text-2xl lg:text-4xl font-bold">Omar’s Basic Math</h1>
+        <h1 className="text-2xl lg:text-4xl font-bold">{courseName}</h1>
 
         <p className="opacity-80 font-semibold mt-2">
           Course Details / Description
@@ -29,15 +33,15 @@ const DetailsTextOfCourse = () => {
         <div className="card lg:card-side bg-base-100 border-2 rounded-none">
           <figure>
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm_QEZ31qp61g5f5IrioJzdjBbgGleVI9YFvTKjzvSUxoRUkbut9tOzg2n1dfTc_0VyPE&usqp=CAU"
-              alt="Movie"
+              src= {techerImg}
+              alt="thecherImg"
               className="w-full"
             />
           </figure>
 
           <div className="card-body">
-            <h2 className="card-title">Ms: Shanara Begam</h2>
-            <p>BSC Enginiear, BUIT</p>
+            <h2 className="card-title">{ThecherName}</h2>
+            <p>{ThecherEducation}</p>
           </div>
         </div>
       </div>
@@ -57,19 +61,16 @@ const DetailsTextOfCourse = () => {
           <div className="card-body">
             <div className="">
               <ul>
-                <li className="flex items-center mb-3">
-                  <img src={dot} alt="" />{" "}
-                  <span className="ml-2"> Key Point Here </span>
-                </li>
-                <li className="flex items-center mb-3">
-                  <img src={dot} alt="" />{" "}
-                  <span className="ml-2"> Key Point Here </span>
-                </li>
+ {
+  keyPoint?.map(point=><li className="flex items-center mb-3">
+   
+<li className="list-disc ml-2	">  <span className=""> {point.name}</span></li>
+</li>)
+ }
 
-                <li className="flex items-center mb-3">
-                  <img src={dot} alt="" />{" "}
-                  <span className="ml-2"> Key Point Here </span>
-                </li>
+
+                
+               
               </ul>
             </div>
 
@@ -88,10 +89,7 @@ const DetailsTextOfCourse = () => {
 
               <div>
                 <p className="font-semibold">
-                  Thank You, Dear Aminur for staying with us. To know your order
-                  status please call +880 1571 245 208 and tell us this order
-                  ID: 65542. Thank You, Dear Aminur for staying with us. To know
-                  your order status please call.
+                 {aboutCours}
                 </p>
               </div>
             </div>
@@ -109,61 +107,25 @@ const DetailsTextOfCourse = () => {
          
          {/* FAQ start */}
 
-        <div
+
+          {videolecture?.map(lecture=><div
           tabIndex={1}
           className="collapse collapse-arrow border border-base-300 bg-base-100"
         >
           <div className="collapse-title text-xl font-medium">
-            Focus me to see content
+           {lecture.name}
           </div>
           <div className="collapse-content">
-            <p>tabIndex={1} attribute is necessary to make the div focusable</p>
+            <p tabIndex={1}> {lecture.details}</p>
           </div>
-        </div>
-        <div
-          tabIndex={1}
-          className="collapse collapse-arrow border border-base-300 bg-base-100"
-        >
-          <div className="collapse-title text-xl font-medium">
-            Focus me to see content
-          </div>
-          <div className="collapse-content">
-            <p>tabIndex={1} attribute is necessary to make the div focusable</p>
-          </div>
-        </div>
-        <div
-          tabIndex={1}
-          className="collapse collapse-arrow border border-base-300 bg-base-100"
-        >
-          <div className="collapse-title text-xl font-medium">
-            Focus me to see content
-          </div>
-          <div className="collapse-content">
-            <p>tabIndex={1} attribute is necessary to make the div focusable</p>
-          </div>
-        </div>
-        <div
-          tabIndex={1}
-          className="collapse collapse-arrow border border-base-300 bg-base-100"
-        >
-          <div className="collapse-title text-xl font-medium">
-            Focus me to see content
-          </div>
-          <div className="collapse-content">
-            <p>tabIndex={1} attribute is necessary to make the div focusable</p>
-          </div>
-        </div>
-        <div
-          tabIndex={1}
-          className="collapse collapse-arrow border border-base-300 bg-base-100"
-        >
-          <div className="collapse-title text-xl font-medium">
-            Focus me to see content
-          </div>
-          <div className="collapse-content">
-            <p>tabIndex={1} attribute is necessary to make the div focusable</p>
-          </div>
-        </div>
+        </div>)}
+ 
+
+        
+         
+        
+         
+        
 
         {/* fAQ end */}
 
