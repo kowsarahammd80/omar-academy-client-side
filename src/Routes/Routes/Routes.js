@@ -12,6 +12,7 @@ import SignUp from "../../Components/SignUp/SignUp";
 import Main from "../../Layout/Main/Main";
 import HomePages from "../../Pages/HomePages/HomePages";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ShopingPage from "../../Pages/ShopingPage/ShopingPage";
 
 const routers = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const routers = createBrowserRouter([
           </PrivateRoute>
         ),
 
+      },
+      {
+        path:"/shoping",
+        element:<ShopingPage></ShopingPage>
       },
       {
         path:"/shop",
