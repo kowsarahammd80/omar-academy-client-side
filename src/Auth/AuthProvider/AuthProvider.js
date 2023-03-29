@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
 
   const logOut = () => {
     setLoading(true);
-    localStorage.removeItem("omarToken");
+    localStorage.removeItem("accessToken");
     return signOut(auth);
   };
 
