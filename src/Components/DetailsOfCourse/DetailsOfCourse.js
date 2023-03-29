@@ -1,17 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { WhislistContext } from '../../Context/WishLishtProbaider';
+import ShopingPage from '../../Pages/ShopingPage/ShopingPage';
 import DetailsCardOfCourse from '../DetailsCardOfCourse/DetailsCardOfCourse';
 import DetailsTextOfCourse from '../DetailsTextOfCourse/DetailsTextOfCourse';
 
 const DetailsOfCourse = () => {
 
+  const data=useLoaderData()
+
+
+
+
 
   const {addToWishlist }=useContext(WhislistContext)
- 
-
 const handleaddToWishlish=(product)=>{
   addToWishlist(product)
 }
+
+
+
+
+
 
 
   return (
@@ -25,7 +35,8 @@ const handleaddToWishlish=(product)=>{
                <div className='w-full'>
                    
                    <DetailsTextOfCourse 
-                   
+                   data={data}
+                  
                    
                    />
 
@@ -34,6 +45,8 @@ const handleaddToWishlish=(product)=>{
                <div className='w-full'>
 
                   <DetailsCardOfCourse
+                 
+                  data={data}
                   handleaddToWishlish={handleaddToWishlish}
                   
                   />
@@ -41,6 +54,7 @@ const handleaddToWishlish=(product)=>{
                </div>
 
          </div>
+
 
     </div>
 

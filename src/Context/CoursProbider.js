@@ -31,28 +31,26 @@ const CoursProbider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(newCart));
   };
 
- 
-
   const clearCart = () => {
     setCart([]);
     localStorage.removeItem("cart");
   };
 
-  const cartTotal = cart.reduce(
-    (total, product) => total + product.price * product.qty,
-    0
-  );
+  const cartTotal = cart.reduce((total, product) => {
+    return total + (product.price || 0) * product.qty;
+  }, 0);
+
+  console.log(cartTotal);
 
   return (
     <CoursContext.Provider
       value={{
         cartTotal,
         clearCart,
-        
+
         removeFromCart,
         cart,
         addToCart,
-   
       }}
     >
       {children}

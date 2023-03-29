@@ -9,8 +9,9 @@ import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
 import { CoursContext } from "../../Context/CoursProbider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
-const {cart}=useContext(CoursContext)
+  const { user, cartTotal} = useContext(AuthContext);
+       
+        const {cart,}=useContext(CoursContext)
 
   const navInfo = (
     <>
@@ -106,7 +107,11 @@ const {cart}=useContext(CoursContext)
 
               {/* add to card */}
 
-              <NavAddToCard />
+              <NavAddToCard 
+              
+              cartTotal={cartTotal}
+              cart={cart}
+              />
 
               {/* notification */}
 
