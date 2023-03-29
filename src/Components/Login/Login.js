@@ -5,6 +5,7 @@ import Google from "../Google/Google";
 import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
 import Loading from "../Loading/Loading";
 import { saveuserInfo } from "../../api/userinfo";
+import useToken from "../../Hooks/Custom-Hook/useToken";
 
 const Login = () => {
   const { loginUser, forgatPassword, loading, setLoading } =
@@ -19,9 +20,18 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
 
   const [error, setError] = useState("");
+ 
+  const[signinEmail,setSignUpemail]=useState("")
 
-  console.log(error);
 
+  const[token]=useToken(signinEmail)
+  
+  if(token){
+     navigate(from, { replace: true });
+  }
+
+
+  
   const loginHandler = (event) => {
     event.preventDefault();
 
@@ -45,8 +55,13 @@ const Login = () => {
           uid: user.uid,
           photoURL: user.photoURL,
         };
+
+   //get  token 
+   setSignUpemail(user.email)
+
+        ///save database
         saveuserInfo(information);
-        navigate(from, { replace: true });
+
         setLoading(false);
         console.log(user);
       })

@@ -1,15 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import Google from "../Google/Google";
 import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
 import { saveuserInfo } from "../../api/userinfo";
+import useToken from "../../Hooks/Custom-Hook/useToken";
 
 const SignUp = () => {
   const { signUpUser, loading, setProfile, emailVerification } =
     useContext(AuthContext);
-
+const[signUpemail,setSignUpemail]=useState("")
   const navigate = useNavigate();
+
+   
+       const[token]=useToken(signUpemail)
+       if(token){
+        navigate("/login");
+       }
+
+
+
   const signUpHandle = (event) => {
     event.preventDefault();
 
@@ -36,9 +46,11 @@ const SignUp = () => {
             photoURL: user.photoURL,
             phonNumber: number,
           };
+          setSignUpemail(user?.email)
+          //save database
           saveuserInfo(information);
         });
-        navigate("/login");
+       
       })
       .catch((e) => console.error(e));
   };

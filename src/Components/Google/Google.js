@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
 import "./Google.css";
 import { GoogleAuthProvider } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import { saveuserInfo } from "../../api/userinfo";
+import useToken from "../../Hooks/Custom-Hook/useToken";
 
 const Google = () => {
   const { googleProvider, setLoading, loading } = useContext(AuthContext);
@@ -16,6 +17,13 @@ const Google = () => {
 
   const from = location.state?.from?.pathname || "/";
 
+
+  const [signinEmail,setSigniemail]=useState("")
+  const [token]=useToken(signinEmail)
+if(token){
+  navigate(from, { replace: true });
+}
+   
   const googleHandle = () => {
     googleProvider(provider)
       .then((result) => {
@@ -25,7 +33,10 @@ const Google = () => {
         if (loading) {
           return <Loading />;
         }
-        navigate(from, { replace: true });
+        //get token 
+          setSigniemail(user.email)  
+
+
         setLoading(false);
 
         const information = {
@@ -34,6 +45,7 @@ const Google = () => {
           uid: user.uid,
           photoURL: user.photoURL,
         };
+      ///save  datafase
         saveuserInfo(information);
       })
       .catch((e) => console.error(e));
