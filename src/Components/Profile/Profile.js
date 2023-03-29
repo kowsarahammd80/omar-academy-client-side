@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getOrder } from "../../api/booking";
 import image from '../../assats/mathematics-word (2).jpg'
+import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
 
 const Profile = () => {
+   const {user}=useContext(AuthContext)
+
+
+
+  const [orders, setOrders] = useState([]);
+  const fetchOrder = () =>
+  getOrder(user?.email).then((data) => setOrders(data));
+
+  useEffect(() => {
+      fetchOrder();
+  }, [user]);
+
+
+
+
 
   return (
 
-    <div className="mx-5 lg:mx-16 mb-5">
+    <div className="mx-5 lg:mx-16 mb-5 bg-slate-100">
 
 
        <div className="text-center mt-5 lg:mt-10 mb-5 lg:mb-16">
@@ -18,13 +36,16 @@ const Profile = () => {
 
       {/* course card */}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+     <div className="grid  gap-10 p-10 lg:grid-cols-2 grid-cols-1">
+     {
+        orders?.map(order=>  <div className=" ">
 
         <div className="card w-full lg:card-side bg-base-100 shadow-xl">
 
           <figure>
             <img
-              src={image}
+              src={order.coursThumnil}
               alt="Album"
               className="w-96"
             />
@@ -32,47 +53,30 @@ const Profile = () => {
 
           <div className="card-body">
 
-            <h2 className="card-title">New album is released!</h2>
+            <h2 className="card-title">{order.courseName}</h2>
 
-            <p>Click the button to listen on Spotiwhy app.</p>
+            <p>{order.aboutCours}</p>
 
             <div className="card-actions justify-end">
 
-              <button className="btn btn-primary">Listen</button>
+  <Link to={`/coursvideo/${order.coursId}`}>
 
+            
+              <button  className="btn btn-primary">start</button>
+              </Link>
             </div>
 
           </div>
 
         </div>
 
-        <div className="card w-full lg:card-side bg-base-100 shadow-xl">
+        
 
-          <figure>
-            <img
-              src={image}
-              alt="Album"
-              className="w-96"
-            />
-          </figure>
+      </div>)
+      }
+     </div>
 
-          <div className="card-body">
-
-            <h2 className="card-title">New album is released!</h2>
-
-            <p>Click the button to listen on Spotiwhy app.</p>
-
-            <div className="card-actions justify-end">
-
-              <button className="btn btn-primary">Listen</button>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
+    
 
 
     </div>

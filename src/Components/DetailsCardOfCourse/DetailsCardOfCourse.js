@@ -3,12 +3,11 @@ import "./DetailsCardOfCourse.css";
 import image from "../../assats/Rectangle 4 (1).png";
 import arow from "../../assats/Vector (6).png";
 import books from "../../assats/book-store.png";
-import { Link } from "react-router-dom";
 import BuyProbider, { BuynowContext } from "../../Context/BuyProbider";
+import Shopmodal from "../ShopModal/Shopmodal";
 
 const DetailsCardOfCourse = ({ handleaddToWishlish ,data,}) => {
   
-   const {addToCart}=useContext(BuynowContext)
   const {_id,courseName,coursThumnil,ThecherName,ThecherEducation,techerImg
     ,videoQuantity,videolecture,
       chapterQuantity,coursPrice
@@ -64,17 +63,8 @@ const DetailsCardOfCourse = ({ handleaddToWishlish ,data,}) => {
               </div>
 
               {/* buy now button */}
-
-              <Link to="/shoping"> <div className="card-actions justify-center">
-
-
-               
-                <button 
-                
-                   onClick={()=>addToCart(data)}
-                className="buy-now-button mt-5 mb-5">Buy Now</button>
-              </div>
-              </Link>
+              <label htmlFor="my-modal-5" className="btn">buy now</label>
+        
               <hr className="hr-tag text-gray-200" />
 
               {/* details */}
@@ -144,6 +134,8 @@ const DetailsCardOfCourse = ({ handleaddToWishlish ,data,}) => {
 
         {/* Omar's books end */}
       </div>
+
+      <Shopmodal data={data}></Shopmodal>
     </div>
   );
 };

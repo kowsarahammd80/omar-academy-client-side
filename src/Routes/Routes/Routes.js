@@ -13,6 +13,8 @@ import Main from "../../Layout/Main/Main";
 import HomePages from "../../Pages/HomePages/HomePages";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ShopingPage from "../../Pages/ShopingPage/ShopingPage";
+import CoursDettails from "../../Components/CoursVideo/CoursDettails";
+ 
 
 const routers = createBrowserRouter([
   {
@@ -33,7 +35,12 @@ const routers = createBrowserRouter([
         path: "/profileSetting",
         element: <ProfileSetting></ProfileSetting>,
       },
-
+       {
+        path:"/coursvideo/:id",
+        loader:({params})=>fetch(`http://localhost:5000/coursvideo/${params.id}`),
+        element:<CoursDettails></CoursDettails>
+       }
+,
       {
         path: "/login",
         element: <Login></Login>,
