@@ -4,7 +4,7 @@ export const BuynowContext = createContext([]);
 const BuyProbider= ({ children }) => {
 
 const [cartProduct, setCartProduct] = useState(null);
-console.log(cartProduct)
+
 
 
 useEffect(() => {
