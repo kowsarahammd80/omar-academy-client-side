@@ -9,7 +9,11 @@ import useToken from "../../Hooks/Custom-Hook/useToken";
 const SignUp = () => {
   const { signUpUser, loading, setProfile, emailVerification } =
     useContext(AuthContext);
-const[signUpemail,setSignUpemail]=useState("")
+
+ const[signUpemail,setSignUpemail]=useState("")
+
+ const [error, setError] = useState("")
+
   const navigate = useNavigate();
 
    
@@ -32,6 +36,7 @@ const[signUpemail,setSignUpemail]=useState("")
     // console.log(name, email, phoneNumber, password)
 
     signUpUser(email, password)
+    
       .then((result) => {
         const user = result.user;
 
@@ -52,7 +57,10 @@ const[signUpemail,setSignUpemail]=useState("")
         });
        
       })
-      .catch((e) => console.error(e));
+      .catch((e) => {  
+        console.error(e)
+        setError(e.message)
+      });
   };
 
   const userNamePhoneNumberSet = (name) => {
@@ -133,6 +141,8 @@ const[signUpemail,setSignUpemail]=useState("")
                   className="input input-bordered w-full mb-10 rounded-none py-5 lg:py-7"
                   required
                 />
+
+                <p className="font-semibold text-red-500 mb-5">{error}</p>
 
                 <button type="submit" className="Sign-Up-Button mb-5 font-bold">
                   Sign Up

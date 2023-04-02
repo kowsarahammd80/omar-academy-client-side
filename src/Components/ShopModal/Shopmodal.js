@@ -42,19 +42,30 @@ function Shopmodal({data}){
 <div className="modal w-full">
 <body>
   <div class=" w-full bg-gray-100  p-20">
-    <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+    <h1 class="mb-10 text-center text-2xl font-bold"> {courseName} </h1>
+
     <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+
       <div class="rounded-lg md:w-2/3">
          
-        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-          <img src={coursThumnil}  alt="product-image" class="w-full rounded-lg sm:w-40" />
+        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start w-full">
+
+          <img src={coursThumnil} alt="product-image" class="w-full rounded-lg"/>
+
           <div class="sm:ml-4 sm:flex sm:w-full items-center sm:justify-between">
+
             <div class="mt-5 sm:mt-0">
-              <h2 class="text-lg font-bold text-gray-900">{courseName}</h2>
-              <p class="mt-1 text-md text-gray-700">Price: {coursPrice} Taka</p>
+
+              <h2 class="text-lg font-bold text-gray-900">
+                {courseName}
+              </h2>
+                                                                 
+              <p class="mt-1 text-md text-gray-700"> Price: {coursPrice} Taka </p>
+
             </div>
              
           </div>
+
         </div>
       </div>
 

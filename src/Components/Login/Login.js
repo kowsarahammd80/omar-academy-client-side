@@ -7,7 +7,9 @@ import Loading from "../Loading/Loading";
 import { saveuserInfo } from "../../api/userinfo";
 import useToken from "../../Hooks/Custom-Hook/useToken";
 
+
 const Login = () => {
+
   const { loginUser, forgatPassword, loading, setLoading } =
     useContext(AuthContext);
 
@@ -71,10 +73,13 @@ const Login = () => {
       });
   };
 
+
   const emailBlurHandle = (event) => {
+
     const email = event.target.value;
     setUserEmailForForgetPassword(email);
     //  console.log(email)
+
   };
 
   const forgetPasswordHandle = () => {
@@ -90,23 +95,34 @@ const Login = () => {
       .catch((e) => console.error(e));
   };
 
+  
   return (
+
     <div className="mx-3 lg:mx-16  mt-20 lg:mt-16 ">
+
       <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2">
         {/* headline */}
 
         <div className="hidden lg:block welcome-bg">
+
           <div className="flex justify-center mt-32 height-wel">
+
             <div>
+
               <p className="text-2xl lg:text-4xl font-bold mb-2">
                 A Warm Welcome to
               </p>
 
               <p className="text-2xl lg:text-4xl font-bold wel-Omr-text">
+
                 Omar’s Academy
+
               </p>
+
             </div>
+
           </div>
+
         </div>
 
         <div className="bg-base-200 w-full lg:w-3/4 shadow-2xl">
