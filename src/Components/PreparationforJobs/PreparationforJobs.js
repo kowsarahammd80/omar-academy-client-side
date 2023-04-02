@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import PreparationForJobsMap from "../PreparationForJobsMap/PreparationForJobsMap";
 import { CoursContext } from "../../Context/CoursProbider";
+import { getjobPreparetion } from "../../api/Getallcours";
 
 const PreparationforJobs = () => {
   const [preparationForJobs, setPreparationForJobs] = useState([]);
 
   useEffect(() => {
-    fetch("UniversityTestAdmission.json")
-      .then((res) => res.json())
+
+      getjobPreparetion()
       .then((data) => setPreparationForJobs(data))
       .catch((e) => console.error(e));
   }, []);
@@ -29,7 +30,7 @@ const PreparationforJobs = () => {
       {/* course card */}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 mx-3 lg:mx-14 md:mx-10 mb-5 gap-10 lg:gap-24 mt-5">
-        {preparationForJobs.map((preparationForJob) => (
+        {preparationForJobs.slice(0, 3).map((preparationForJob) => (
           <PreparationForJobsMap
           handeleAddtoCart={handeleAddtoCart}
             key={preparationForJob.id}

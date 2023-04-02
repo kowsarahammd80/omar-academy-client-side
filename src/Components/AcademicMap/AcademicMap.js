@@ -34,7 +34,7 @@ const AcademicMap = ({ academicData }) => {
         <hr className="hr-tag" />
 
         <div className="card-actions justify-center py-2 text-lg">
-          <Link to={`/academyDetails/${_id}`}>
+          <Link to={`/coursdettails/${_id}`}>
             <button className="see-details font-bold">See Details</button>
           </Link>
         </div>
