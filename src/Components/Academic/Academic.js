@@ -2,15 +2,16 @@ import React, { useEffect, useState, useContext } from "react";
 import "./Accademic.css";
 import AcademicMap from "../AcademicMap/AcademicMap";
 import whislistContext, { WhislistContext } from "../../Context/WishLishtProbaider";
+import { getacadmicCours } from "../../api/Getallcours";
 
 const Academic = () => {
   const [academices, setAcademices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getacadmic")
-      .then((res) => res.json())
-      .then((data) => setAcademices(data))
-      .catch((e) => console.error(e));
+    getacadmicCours()
+    .then(data=>{
+      setAcademices(data)
+    })
   }, []);
 
   
@@ -37,7 +38,7 @@ console.log(academices)
       {/* corse sub heading card */}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 mx-3 lg:mx-14 md:mx-10 mb-5 gap-10 lg:gap-24 mt-5">
-        {academices.map((academic) => (
+        {academices.slice(0,3).map((academic) => (
           <AcademicMap key={academic._id} academicData={academic}></AcademicMap>
         ))}
       </div>

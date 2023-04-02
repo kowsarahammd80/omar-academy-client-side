@@ -9,6 +9,7 @@ import useToken from "../../Hooks/Custom-Hook/useToken";
 const SignUp = () => {
   const { signUpUser, loading, setProfile, emailVerification } =
     useContext(AuthContext);
+    
 const[signUpemail,setSignUpemail]=useState("")
   const navigate = useNavigate();
 
@@ -60,10 +61,13 @@ const[signUpemail,setSignUpemail]=useState("")
       displayName: name,
     };
 
-    console.log(profile);
+ 
 
     setProfile(profile)
-      .then(() => {})
+      .then(() => {
+
+
+      })
       .catch((e) => console.error(e));
   };
 
