@@ -78,12 +78,12 @@ function Shopmodal({data}){
              
           </div>
         </div>
-        <button  onClick={handeleOrder} class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+        <button onClick={() => { handeleOrder(); document.getElementById("my-modal-5").checked = false; }} class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+        {/* <button  onClick={handeleOrder} class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button> */}
       </div>
-     
     </div>
     <div className="modal-action">
-      <label htmlFor="my-modal-5" className="btn">close </label>
+      <label htmlFor="my-modal-5" className="btn">cancel</label>
     </div>
   </div>
   
