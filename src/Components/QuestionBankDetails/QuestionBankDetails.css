@@ -1,0 +1,35 @@
+.image-for-QuestionBank{
+    
+  width: 100%;
+  height: 20vh;
+
+}
+
+.button-class{
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  border: 1px solid gray;
+}
+
+.faq-div-question{
+  width: 100%;
+  border: 1px solid gray;
+}
+
+.books-card-div{
+  width: 60%;
+}
+
+.omar-books{
+  width: 100%;
+  height: 60vh;
+}
+
+.books-button-omar{
+  background-color: #4AF0AE;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+}

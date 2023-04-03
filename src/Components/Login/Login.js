@@ -83,6 +83,7 @@ const Login = () => {
   };
 
   const forgetPasswordHandle = () => {
+
     if (!userEmailForForgetPassword) {
       alert("Please provide your email address");
       return;
@@ -95,7 +96,7 @@ const Login = () => {
       .catch((e) => console.error(e));
   };
 
-  
+
   return (
 
     <div className="mx-3 lg:mx-16  mt-20 lg:mt-16 ">
@@ -159,6 +160,7 @@ const Login = () => {
                 />
 
                 <div className="flex justify-between">
+
                   <p className="text-red-500 font-semibold"> {error} </p>
 
                   <p
@@ -167,20 +169,29 @@ const Login = () => {
                   >
                     Forget password?
                   </p>
+
                 </div>
 
                 <button className="Sign-Up-Button font-bold text-white mb-5">
                   Login
                 </button>
+
               </form>
 
               <Google />
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   );
+  
 };
 
 export default Login;

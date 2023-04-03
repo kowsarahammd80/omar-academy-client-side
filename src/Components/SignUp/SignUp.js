@@ -10,11 +10,14 @@ const SignUp = () => {
   const { signUpUser, loading, setProfile, emailVerification } =
     useContext(AuthContext);
 
- const[signUpemail,setSignUpemail]=useState("")
+
+ const[signUpemail,setSignUpemail] = useState("")
 
  const [error, setError] = useState("")
+  
+//  const[signUpemail, setSignUpemail] = useState("")
 
-  const navigate = useNavigate();
+ const navigate = useNavigate();
 
    
        const[token]=useToken(signUpemail)
@@ -68,10 +71,13 @@ const SignUp = () => {
       displayName: name,
     };
 
-    console.log(profile);
+ 
 
     setProfile(profile)
-      .then(() => {})
+      .then(() => {
+
+
+      })
       .catch((e) => console.error(e));
   };
 
@@ -147,6 +153,7 @@ const SignUp = () => {
                 <button type="submit" className="Sign-Up-Button mb-5 font-bold">
                   Sign Up
                 </button>
+
               </form>
 
               <Google />
