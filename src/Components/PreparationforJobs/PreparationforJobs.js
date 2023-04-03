@@ -6,6 +6,8 @@ import { getjobPreparetion } from "../../api/Getallcours";
 const PreparationforJobs = () => {
   const [preparationForJobs, setPreparationForJobs] = useState([]);
 
+   console.log(preparationForJobs + "all data ")
+
   useEffect(() => {
 
       getjobPreparetion()
