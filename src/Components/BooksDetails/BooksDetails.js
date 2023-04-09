@@ -2,6 +2,7 @@ import React from "react";
 import "./BooksDetails.css";
 import bookImage from "../../assats/book-store.png";
 import BookDetailsOfIndex from "../BookDetailsOfIndex/BookDetailsOfIndex";
+import { Link } from "react-router-dom";
 
 const BooksDetails = () => {
 
@@ -89,7 +90,7 @@ const BooksDetails = () => {
 
             <div className="mt-5 flex justify-around">
 
-              <button className="buy-now-book-button">Buy Now</button>
+              <Link to="/deliveryAddress"><button className="buy-now-book-button">Buy Now</button></Link>
 
               <button className="add-book-button">Add to Card</button>
 

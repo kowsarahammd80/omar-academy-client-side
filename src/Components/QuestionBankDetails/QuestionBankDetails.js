@@ -218,6 +218,7 @@ const QuestionBankDetails = () => {
               </div>
             </div>
           </div>
+
           <div className="card card-compact bg-base-100 shadow-xl p-0">
             <figure>
               <img src={academyCourseImage} alt="" className="w-full" />
@@ -245,6 +246,7 @@ const QuestionBankDetails = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -268,24 +270,9 @@ const QuestionBankDetails = () => {
             </div>
           </div>
         </div> */}
-
-        <div className="card w-full card-side bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src={omarBooks}
-              alt="Movie"
-              className="omar-books p-3"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Omar’s Basic Math</h2>
-            <p className="">599 taka</p>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-start">
-              <button className="books-button-omar">Know More</button>
-            </div>
-          </div>
-        </div>
+         
+         
+       
       </div>
     </div>
   );

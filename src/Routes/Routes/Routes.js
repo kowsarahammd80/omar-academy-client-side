@@ -15,7 +15,8 @@ import ShopingPage from "../../Pages/ShopingPage/ShopingPage";
 import CoursDettails from "../../Components/CoursVideo/CoursDettails";
 import QuestionBank from "../../Components/QuestionBank/QuestionBank";
 import QuestionBankDetails from "../../Components/QuestionBankDetails/QuestionBankDetails";
- 
+import DeliveryAdress from "../../Components/DeliveryAdress/DeliveryAdress";
+
 
 const routers = createBrowserRouter([
 
@@ -114,6 +115,11 @@ const routers = createBrowserRouter([
       {
         path: '/questionBankDetails',
         element: <QuestionBankDetails/>
+      },
+      
+      {
+        path: "/deliveryAddress",
+        element: <DeliveryAdress/>
       }
 
     ],
