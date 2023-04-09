@@ -9,12 +9,15 @@ import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
 import { CoursContext } from "../../Context/CoursProbider";
 
 const Navbar = () => {
+
   const { user, cartTotal} = useContext(AuthContext);
        
         const {cart,}=useContext(CoursContext)
 
   const navInfo = (
+
     <>
+
       <li className="font-bold ml-0 lg:ml-5">
         <Link to="/">Home</Link>
       </li>
@@ -44,9 +47,11 @@ const Navbar = () => {
       </li>
 
       <li className="font-bold">
-        <Link>Question Bank</Link>
+        <Link to="/questionBankDetails">Question Bank</Link>
       </li>
+
     </>
+
   );
 
 

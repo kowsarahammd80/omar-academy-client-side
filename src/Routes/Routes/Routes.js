@@ -4,7 +4,6 @@ import BookStore from "../../Components/BookStore/BookStore";
 import ShopingCart from "../../Cards/ShopingCart/ShopingCart";
 import DetailsOfCourse from "../../Components/DetailsOfCourse/DetailsOfCourse"
 import Login from "../../Components/Login/Login";
-import OnlineBatch from "../../Components/OnlineBatch/OnlineBatch";
 import OnlineBatchDetails from "../../Components/OnlineBatchDetails/OnlineBatchDetails";
 import Profile from "../../Components/Profile/Profile";
 import ProfileSetting from "../../Components/ProfileSetting/ProfileSetting";
@@ -14,9 +13,13 @@ import HomePages from "../../Pages/HomePages/HomePages";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ShopingPage from "../../Pages/ShopingPage/ShopingPage";
 import CoursDettails from "../../Components/CoursVideo/CoursDettails";
- 
+import QuestionBank from "../../Components/QuestionBank/QuestionBank";
+import QuestionBankDetails from "../../Components/QuestionBankDetails/QuestionBankDetails";
+import DeliveryAdress from "../../Components/DeliveryAdress/DeliveryAdress";
+
 
 const routers = createBrowserRouter([
+
   {
     path: "/",
     element: <Main></Main>,
@@ -107,6 +110,16 @@ const routers = createBrowserRouter([
       {
         path: "/booksDetails",
         element: <BooksDetails/>
+      },
+
+      {
+        path: '/questionBankDetails',
+        element: <QuestionBankDetails/>
+      },
+      
+      {
+        path: "/deliveryAddress",
+        element: <DeliveryAdress/>
       }
 
     ],

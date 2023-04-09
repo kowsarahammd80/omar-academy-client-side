@@ -112,7 +112,9 @@ const OnlineBatchDetails = () => {
              </div>
 
              <div className="flex justify-center">
+
                  <OnlineBooksAadd/>
+                 
              </div>
 
         </div>

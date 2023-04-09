@@ -9,9 +9,15 @@ import useToken from "../../Hooks/Custom-Hook/useToken";
 const SignUp = () => {
   const { signUpUser, loading, setProfile, emailVerification } =
     useContext(AuthContext);
-    
-const[signUpemail,setSignUpemail]=useState("")
-  const navigate = useNavigate();
+
+
+ const[signUpemail,setSignUpemail] = useState("")
+
+ const [error, setError] = useState("")
+  
+//  const[signUpemail, setSignUpemail] = useState("")
+
+ const navigate = useNavigate();
 
    
        const[token]=useToken(signUpemail)
@@ -33,6 +39,7 @@ const[signUpemail,setSignUpemail]=useState("")
     // console.log(name, email, phoneNumber, password)
 
     signUpUser(email, password)
+    
       .then((result) => {
         const user = result.user;
 
@@ -53,7 +60,10 @@ const[signUpemail,setSignUpemail]=useState("")
         });
        
       })
-      .catch((e) => console.error(e));
+      .catch((e) => {  
+        console.error(e)
+        setError(e.message)
+      });
   };
 
   const userNamePhoneNumberSet = (name) => {
@@ -72,34 +82,49 @@ const[signUpemail,setSignUpemail]=useState("")
   };
 
   return (
+
     <div className="mx-3 lg:mx-16 mt-10 welcome-bg height-set-welcome-div mb-10">
+
       <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 ">
+        
         {/* headline */}
 
         <div className="hidden lg:block ">
+
           <div className="flex justify-center mt-48">
+
             <div>
+
               <p className="text-2xl lg:text-4xl font-bold mb-2">
+
                 A Warm Welcome to
+
               </p>
 
               <p className="text-2xl lg:text-4xl font-bold wel-Omr-text">
+
                 Omar’s Academy
+
               </p>
+
             </div>
           </div>
         </div>
 
         <div className="bg-base-200 w-full lg:w-3/4 shadow-2xl">
+
           <div className="mx-16">
+
             {/* Text SignUp */}
 
             <div className="flex-none lg:flex justify-between items-center mt-6 mb-6 lg:mb-10">
+
               <h1 className="text-3xl font-bold mb-2 lg:mb-0">Sign Up</h1>
 
               <Link to="/login" className="underline already-text">
                 Already have an account !
               </Link>
+
             </div>
 
             {/* form start */}
@@ -138,9 +163,12 @@ const[signUpemail,setSignUpemail]=useState("")
                   required
                 />
 
+                <p className="font-semibold text-red-500 mb-5">{error}</p>
+
                 <button type="submit" className="Sign-Up-Button mb-5 font-bold">
                   Sign Up
                 </button>
+
               </form>
 
               <Google />

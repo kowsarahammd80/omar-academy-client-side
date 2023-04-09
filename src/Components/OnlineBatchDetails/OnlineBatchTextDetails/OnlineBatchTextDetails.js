@@ -45,23 +45,39 @@ const OnlineBatchTextDetails = () => {
         {/* card */}
 
         <div className="card w-100 bg-base-100 border-2 rounded-none">
+
           <div className="card-body">
+
             <div className="">
+
               <ul>
+
                 <li className="flex items-center mb-3">
-                  <img src={dot} alt="" />{" "}
+
+                  <img src={dot} alt="" />
+                  
                   <span className="ml-2"> Key Point Here </span>
-                </li>
-                <li className="flex items-center mb-3">
-                  <img src={dot} alt="" />{" "}
-                  <span className="ml-2"> Key Point Here </span>
+
                 </li>
 
                 <li className="flex items-center mb-3">
-                  <img src={dot} alt="" />{" "}
+
+                  <img src={dot} alt="" />
+
                   <span className="ml-2"> Key Point Here </span>
+
                 </li>
+
+                <li className="flex items-center mb-3">
+
+                  <img src={dot} alt="" />
+
+                  <span className="ml-2"> Key Point Here </span>
+
+                </li>
+
               </ul>
+
             </div>
 
             <hr className="hr-tag text-gray-200" />
@@ -69,24 +85,38 @@ const OnlineBatchTextDetails = () => {
             {/* More about this course */}
 
             <div>
+
               {/* headline */}
 
               <div className="mt-5 mb-3">
-                <h1 className="text-lg font-bold">More about this course</h1>
+
+                <h1 className="text-lg font-bold">
+                  
+                  More about this course
+                  
+                </h1>
+
               </div>
 
               {/* details paragraph */}
 
               <div>
+
                 <p className="font-semibold">
+
                   Thank You, Dear Aminur for staying with us. To know your order
                   status please call +880 1571 245 208 and tell us this order
                   ID: 65542. Thank You, Dear Aminur for staying with us. To know
                   your order status please call.
+
                 </p>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
 
         {/* Enroll course */}
