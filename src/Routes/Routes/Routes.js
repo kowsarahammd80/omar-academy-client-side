@@ -16,6 +16,7 @@ import CoursDettails from "../../Components/CoursVideo/CoursDettails";
 import QuestionBank from "../../Components/QuestionBank/QuestionBank";
 import QuestionBankDetails from "../../Components/QuestionBankDetails/QuestionBankDetails";
 import DeliveryAdress from "../../Components/DeliveryAdress/DeliveryAdress";
+import OrderConfirmation from "../../Components/OrderConfirmation/OrderConfirmation";
 
 
 const routers = createBrowserRouter([
@@ -38,12 +39,13 @@ const routers = createBrowserRouter([
         path: "/profileSetting",
         element: <ProfileSetting></ProfileSetting>,
       },
+
        {
         path:"/coursvideo/:id",
         loader:({params})=>fetch(`http://localhost:5000/coursvideo/${params.id}`),
         element:<CoursDettails></CoursDettails>
-       }
-,
+       },
+       
       {
         path: "/login",
         element: <Login></Login>,
@@ -69,17 +71,16 @@ const routers = createBrowserRouter([
         ),
 
       },
+
       {
         path:"/shoping",
         element:<ShopingPage></ShopingPage>
       },
+
       {
         path:"/shop",
          element:<ShopingCart></ShopingCart>
-      }
-
-
-,
+      },
 
 
       {
@@ -120,6 +121,11 @@ const routers = createBrowserRouter([
       {
         path: "/deliveryAddress",
         element: <DeliveryAdress/>
+      },
+
+      {
+        path: "/orderConfirm",
+        element: <OrderConfirmation/>
       }
 
     ],
