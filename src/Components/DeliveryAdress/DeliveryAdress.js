@@ -1,5 +1,6 @@
 import React from 'react';
 import './DeliveryAdress.css'
+import { Link } from 'react-router-dom';
 
 const DeliveryAdress = () => {
 
@@ -16,10 +17,14 @@ const DeliveryAdress = () => {
       <form className='w-full '>
            
            <div>
-           <input type="text" placeholder="Profile Name" className="input input-bordered w-full rounded-none mb-4" />
-           <input type="text" placeholder="Registered Mobile Number" className="input input-bordered w-full rounded-none mb-4" />
-           <input type="text" placeholder="E-mail Address" className="input input-bordered w-full rounded-none mb-4" />
-           <input type="text" placeholder="Alternative Phone Number" className="input input-bordered w-full rounded-none mb-4" />
+
+            <input type="text" placeholder="Profile Name" className="input input-bordered w-full rounded-none mb-4" />
+
+            <input type="text" placeholder="Registered Mobile Number" className="input input-bordered w-full rounded-none mb-4" />
+
+            <input type="text" placeholder="E-mail Address" className="input input-bordered w-full rounded-none mb-4" />
+
+            <input type="text" placeholder="Alternative Phone Number" className="input input-bordered w-full rounded-none mb-4" />
   
            </div>
 
@@ -66,7 +71,9 @@ const DeliveryAdress = () => {
            </div>
 
            <div className='my-5'>
-               <button className='button-address-submit'>Submit</button>
+
+              <Link to="/orderConfirm">  <button className='button-address-submit'>Submit</button> </Link>
+
            </div>
 
          </form>
@@ -77,5 +84,7 @@ const DeliveryAdress = () => {
   );
 
 };
+
+
 
 export default DeliveryAdress;
