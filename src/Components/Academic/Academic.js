@@ -38,10 +38,13 @@ console.log(academices)
       {/* corse sub heading card */}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 mx-3 lg:mx-14 md:mx-10 mb-5 gap-10 lg:gap-24 mt-5">
+
         {academices.slice(0,3).map((academic) => (
           <AcademicMap key={academic._id} academicData={academic}></AcademicMap>
         ))}
+
       </div>
+      
     </div>
   );
 };

@@ -17,6 +17,7 @@ import QuestionBank from "../../Components/QuestionBank/QuestionBank";
 import QuestionBankDetails from "../../Components/QuestionBankDetails/QuestionBankDetails";
 import DeliveryAdress from "../../Components/DeliveryAdress/DeliveryAdress";
 import OrderConfirmation from "../../Components/OrderConfirmation/OrderConfirmation";
+import JobPreparationCourses from "../../Components/JobPreparationCourses/JobPreparationCourses";
 
 
 const routers = createBrowserRouter([
@@ -126,6 +127,11 @@ const routers = createBrowserRouter([
       {
         path: "/orderConfirm",
         element: <OrderConfirmation/>
+      },
+
+      {
+        path: '/jobPreparationCourses',
+        element: <JobPreparationCourses/>
       }
 
     ],

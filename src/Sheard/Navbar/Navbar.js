@@ -19,15 +19,21 @@ const Navbar = () => {
     <>
 
       <li className="font-bold ml-0 lg:ml-5">
+
         <Link to="/">Home</Link>
+
       </li>
 
       <li className="font-bold">
+
         <Link>Class 1-12</Link>
+
       </li>
 
       <li className="font-bold">
-        <Link>Job Preparation</Link>
+
+        <Link to="/jobPreparationCourses">Job Preparation</Link>
+        
       </li>
 
       <li className="font-bold">
